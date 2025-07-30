@@ -1,21 +1,18 @@
 import React from 'react'
-function Product() {
+function Product(props) {
+    console.log(props);
+  //props = {name: "Ayakkabı", price: 4000, color: "Siyah"}
+  //props = {name: "Pantolon", price: 2000, color: "Mavi"}
   return (
     <div>
-        <div> ÜRÜN BİLGİLERİ </div> <hr />
+        <div> ÜRÜN BİLGİLERİ </div> 
+        <hr />
         <br />
         <div>
-            <div> İsim : Ayakkabı </div>
-            <div>Fiyat : 4000 TL </div>
-            <div> Renk : Siyah </div>
+            <div> İsim : {props.productName} </div>
+            <div>Fiyat : {props.price} TL </div>
+            <div> Renk : {props.color}</div>
         </div>
-        <hr />
-        <div>
-            <div> İsim : Pantolon </div>
-            <div>Fiyat : 2000 TL </div>
-            <div> Renk : Mavi </div>
-        </div>
- 
     </div>
   )
 }
