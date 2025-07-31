@@ -3,20 +3,25 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Header'
-
+import { courses } from './Data'
+import Course from './Component/Course'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
 
 
       <div>
-        <h1>
+        
           <Header />
-          <p>ali</p>
-        </h1>
-      </div>
+
+        {
+          courses?.map((course) => (
+            <Course key={course.id} course={course} />
+          ))
+        }
+        
+      </div> 
 
 
     </div>
