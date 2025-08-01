@@ -10,7 +10,6 @@ function App() {
  
   return (
     <div>
-
       <div>
           <Header />
 
@@ -25,9 +24,7 @@ function App() {
          </div>
         
       </div> 
-
     </div>
-
   )
 }
 
