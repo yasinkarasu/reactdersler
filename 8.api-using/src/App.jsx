@@ -1,37 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useEffect } from 'react'
+import './App.css'
 
 const BASE_URL = 'http://localhost:3005'
 
 function App() {
-
-  const getAllUsers =  async() => {
-
-    const responce =  await axios.get(`${BASE_URL}/users`);
-    console.log(responce)
+  const getAllUsers = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/users`)
+      console.log(response.data)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
-   const getUserById = async(userId) => {
-
-    const responce = await axios.get(BASE_URL + "/users/" + userId);
-    console.log(responce.data)
+  const getUserById = async (userId) => {
+    try {
+      const response = await axios.get(`${BASE_URL}/users/${userId}`)
+      console.log(response.data)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
+  const createUser = async (newUser) => {
+    try {
+      const response = await axios.post(`${BASE_URL}/users`, newUser)
+      console.log("response:", response.data)
+    } catch (err) {
+      console.error(err)
+    }
+  }  // ← Burada fonksiyon bitiyor
 
   useEffect(() => {
-    // getAllUsers();
-    getUserById(1);
-
+    const newUser = {
+      username: "deneme Doe",
+      password: "324",
+    }
+    createUser(newUser)
+    // Eğer başlangıçta tüm kullanıcıları çekmek isterseniz:
+    // getAllUsers()
+    // veya tek bir kullanıcı:
+    // getUserById(1)
   }, [])
-
 
   return (
     <div>
-
+      {/* UI içeriğiniz buraya */}
     </div>
   )
 }
