@@ -32,6 +32,9 @@ function App() {
     }
   }  // ← Burada fonksiyon bitiyor
 
+
+  const updateUser = async (userId, updatedUser) => {
+    
   useEffect(() => {
     const newUser = {
       username: "deneme Doe",
