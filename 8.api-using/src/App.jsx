@@ -34,13 +34,29 @@ function App() {
 
 
   const updateUser = async (userId, updatedUser) => {
+    //put ile güncelleme işlemi
+    //ALT GR + iki kere virgüle basıyoruz
+    axios.put(`${BASE_URL}/users/${userId}`, updatedUser)
+
+  const deleteUserById = async (userId) => {
+   const deleteResponce = await axios.delete(`${BASE_URL}/users/${userId}`)
+    console.log(deletedResponse.data);
+  }  // ← Burada fonksiyon bitiyor
+
     
+
+
   useEffect(() => {
-    const newUser = {
-      username: "deneme Doe",
-      password: "324",
-    }
-    createUser(newUser)
+
+    deleteUserById(1739) // Örnek olarak 1739 ID'li kullanıcıyı siler
+
+
+
+    // bconst newUser = {
+    //  username: "deneme Doe",
+    //  password: "324"
+    // }
+    // createUser(newUser)
     // Eğer başlangıçta tüm kullanıcıları çekmek isterseniz:
     // getAllUsers()
     // veya tek bir kullanıcı:
@@ -53,5 +69,6 @@ function App() {
     </div>
   )
 }
+} 
 
 export default App
