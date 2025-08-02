@@ -33,7 +33,7 @@ function App() {
     } catch (err) {
       console.error(err)
     }
-  }  // ← Burada fonksiyon bitiyor
+}}  // ← Burada fonksiyon bitiyor
 
 
   const updateUser = async (userId, updatedUser) => {
