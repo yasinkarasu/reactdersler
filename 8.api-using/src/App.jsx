@@ -14,6 +14,7 @@ function App() {
     }
   }
 
+  /*
   const getUserById = async (userId) => {
     try {
       const response = await axios.get(`${BASE_URL}/users/${userId}`)
@@ -21,7 +22,9 @@ function App() {
     } catch (err) {
       console.error(err)
     }
-  }
+  }  // ← Burada fonksiyon bitiyor
+    */
+
 
   const createUser = async (newUser) => {
     try {
@@ -43,15 +46,39 @@ function App() {
     console.log(deletedResponse.data);
   }  // ← Burada fonksiyon bitiyor
 
-    
+
+
+
+
+
+
+
+
+
+
+  const getUserById = async (userId) => {
+    const response = await axios.get(`${BASE_URL}/users/${userId}`)
+    return response.data;
+  }
+
+  const getPostById = async (postId) => {
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+    return response.data;
+  }
+
+
+  const getPost = async (postId) => {
+    const userResponce = await getUserById(1);
+    console.log(userResponce);
+
+  }
 
 
   useEffect(() => {
 
-    deleteUserById(1739) // Örnek olarak 1739 ID'li kullanıcıyı siler
+    getPost();
 
-
-
+    //deleteUserById(1739) // Örnek olarak 1739 ID'li kullanıcıyı siler
     // bconst newUser = {
     //  username: "deneme Doe",
     //  password: "324"
@@ -69,6 +96,6 @@ function App() {
     </div>
   )
 }
-} 
+
 
 export default App
