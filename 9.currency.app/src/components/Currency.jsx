@@ -7,7 +7,7 @@ const BASE_URL = "https://api.freecurrencyapi.com/v1/latest";
 const API_KEY = "fca_live_oKrFyv1ZhLRWHu6HTT9pY6xK4LiIGrww67pMdJ2a";
 
 function Currency() {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
   const [fromCurrency, setFromCurrency] = useState('USD');
   const [toCurrency, setToCurrency] = useState('TRY'); // TL DİKKAT ET API’de “TRY” olarak geçer
   const [result, setResult] = useState(0);
@@ -15,17 +15,16 @@ function Currency() {
 
   const exchange = async () => {
     try {
-      const response = await axios.get(
-        `${BASE_URL}?apikey=${API_KEY}&base_currency=${fromCurrency}`
-      );
+      const response = await axios.get(`${BASE_URL}?apikey=${API_KEY}&base_currency=${fromCurrency}`);
       // Gelen veriden toCurrency anahtarını alıp hesaplıyoruz
       const rates = response.data.data;
       const rate = rates[toCurrency];
       setResult((amount * rate).toFixed(2));
-    } catch (err) {
+    } 
+    catch (err) {
       console.error("Kur çekme hatası:", err);
     }
-  }
+  } 
 
   return (
     <div className="currency-div">
