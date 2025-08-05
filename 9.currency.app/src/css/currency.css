@@ -1,0 +1,43 @@
+.currency-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* dikeyde başlangıca hizala */
+  align-items: center;     /* dikeyde ortala */
+  gap: 10px;               /* öğeler arası eşit boşluk */
+  margin-top: 50px;
+  width: 500px;
+  height: 250px;
+  border: 1px solid black; 
+}
+
+.amount {
+  width: 80px;          
+  height: 25px;        
+  margin-right: 10px;}
+
+.result {
+  width: 80px;          /* genişlik ayarla */
+  height: 25px;         /* yükseklik ayarla */
+  margin-right: 10px;
+}
+
+.from-currency-option{
+    width: 100px;         
+    height: 25px;        
+    margin-right: 10px;
+}
+.to-currency-option{
+    width: 100px;        
+    height: 25px;        
+    margin-right: 10px;
+}
+.exchange-button {
+  width: 80px;         /* genişlik ayarla */
+  height: 30px;        /* yükseklik ayarla */
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-align: center;
+}
