@@ -7,6 +7,14 @@
   align-items: center;
   justify-content: center;
 }
+.main{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .todo_create{
   display: flex;
   flex-direction: column;
